@@ -101,5 +101,26 @@ class TestJoins(unittest.TestCase):
 
         conn.close()
 
+class TestScraping(unittest.TestCase):
+    def test_page_scrape(self):
+        results = scrape_program_pages('https://rusticpathways.com/programs/young-explorers-land-down-under/')
+        self.assertEqual(results[1], 12) #16
+        self.assertEqual(len(results), 6) #17
+
+    def test_page_scrape2(self):
+        results = scrape_program_pages('https://rusticpathways.com/programs/come-with-nothing-the-mekong-expedition/')
+        self.assertEqual(results[-1], 'No') #18
+        self.assertIn((4795), results) #19
+
+    def test_page_scrape3(self):
+        results = scrape_program_pages('https://rusticpathways.com/programs/njoro-village-service-immersion/')
+        self.assertEqual(results[-3], 9) #20
+        self.assertEqual(results[-2], 2495) #21
+
+class TestProcessing(unittest.TestCase):
+    def test_mapping_dictionary(self):
+        results = get_countries_table_data()
+        self.assertEqual(results[1][-1], 4) #22
+        self.assertEqual(results[-2][0], 'Vietnam') #23
 
 unittest.main()
