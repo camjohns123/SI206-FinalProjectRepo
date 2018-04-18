@@ -325,8 +325,9 @@ def min_age_bar_chart(country):
             line=dict(
                 color='rgb(8,48,107)',
                 width=1.5),
-        ),
-        opacity=0.6)]
+            ),
+            opacity=0.6)
+            ]
 
     layout = dict(title = 'Number of Programs for Each Minimum Age in a Given Country')
 
@@ -478,8 +479,7 @@ def length_boxplot():
         lengths.append(country)
 
     data = lengths
-    layout = dict(title = 'Length of Programs for all Countries Boxplots',
-            )
+    layout = dict(title = 'Length of Programs for all Countries Boxplots',)
     fig = dict(data=data, layout=layout)
 
     plot = py.plot(fig, filename='length_basic_boxplot')
@@ -604,7 +604,6 @@ if __name__=="__main__":
                 country = user_request[-2].capitalize()
                 country += " "
                 country += user_request[-1].capitalize()
-                print(country)
                 if action[8:] not in countries_file.countries_list:
                     print("Invalid input. Try a different country.")
                     continue
@@ -657,6 +656,10 @@ if __name__=="__main__":
 
         elif action == "help":
             large_menu = """
+    create database
+        creates the database and populates the tables
+        valid inputs: create database
+
     programs pie chart
         creating a pie chart of the percent of rustic programs in each country
         valid inputs: programs pie chart
