@@ -1,6 +1,6 @@
 Data Sources:
 I scraped the Rustic Pathways website (https://rusticpathways.com/programs/countries/australia/).
-This website does require any API keys or client secrets.
+This website does not require any API keys or client secrets.
 
 My code is set up with an interactive portion. The user can choose what graphs to present.
 Here is the interactive code so you can familiarize yourself with the different command options.
@@ -55,6 +55,5 @@ Follow these steps to use plotly:
 
 Based on the command a user enters, a particular graph or text is displayed.
 
-My code is structured as a serious of functions that get called through the different interactive prompt commands.
-The most important functions I have are insert_countries_data() and insert_programs_data(). These functions populate the tables I created with information scraped form the webpage. I have also reference a file called countries_file.py. This file contains a list of all the countries in which Rustic Pathways offers programs. I use
-this as a reference for user inputs.
+My code is structured as a series of functions that get called through the different interactive prompt commands.
+The most important functions I have are insert_countries_data() and insert_programs_data(). These functions populate the tables I created with information scraped form the webpage. I have also reference a file called countries_file.py. This file contains a list of all the countries in which Rustic Pathways offers programs. I use this as a reference for user inputs.
